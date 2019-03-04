@@ -1,0 +1,57 @@
+/*
+ * ******    ******           ********
+ * **** **  ** ****          ****     *
+ * ****  ****  **** *******     ****
+ * ****   **   **** ***      *    ****
+ * ****        **** ***       ********
+ * ----- [Programmed by: Mr. S ] -----
+ */
+package pkg0x53;
+import java.util.Scanner;
+/**
+ *
+ * @author 2018-1364
+ */
+public class Problem_3 {
+    private String word;
+    private String reverse_word;
+    private Scanner get = new Scanner(System.in);
+    public Problem_3(){
+        System.out.print("Enter the word: ");
+    }
+    
+    public void getWord(){
+        this.word = get.nextLine();
+    }
+    
+    public String dispWord(){
+        return this.word;
+    }
+    
+    public String dispReWord(){
+        return this.reverse_word;
+    }
+    
+    public void dispPalindrome(){    
+        System.out.println((palindrome() == true)? dispWord() + " is a palindrome": dispWord() + " is not a palindrome");
+    }
+    
+    private boolean palindrome(){
+        reverse_word();
+        String word = this.word.replace(" ", "");
+        for(int i = 0; i < word.length() ; i++){
+            if(this.reverse_word.charAt(i) != word.charAt(i)){
+                return false;
+            }
+        }
+        return true;
+    }
+    
+     private void reverse_word(){
+        String word = this.word.replace(" ", "");
+        this.reverse_word = String.valueOf(word.charAt(word.length()-1));
+        for(int i = word.length()-2; i >= 0; i--){
+            this.reverse_word += word.charAt(i);
+        }
+    }
+}
