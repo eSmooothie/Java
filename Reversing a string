@@ -1,0 +1,39 @@
+/*
+ * ******    ******           ********
+ * **** **  ** ****          ****     *
+ * ****  ****  **** *******     ****
+ * ****   **   **** ***      *    ****
+ * ****        **** ***       ********
+ * ----- [Programmed by: Mr. S ] -----
+ */
+package pkg0x53;
+import java.util.Scanner;
+/**
+ *
+ * @author 2018-1364
+ */
+public class Problem_5 {
+    private String word;
+    final Scanner get = new Scanner(System.in);
+    
+    public Problem_5(){
+        System.out.printf("Enter a sentece: ");
+    }
+    
+    public void getWord(){
+        this.word = get.nextLine();
+    }
+    
+    public void reverse(){
+        recursive(this.word.length());
+    }
+    
+    private int recursive(int len){
+        if(len == 0){
+            return 0;
+        }else{
+            System.out.printf("%c",this.word.charAt(len-1));
+            return recursive(len - 1);
+        }
+    }
+}
