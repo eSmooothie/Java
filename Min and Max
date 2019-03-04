@@ -1,0 +1,95 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package pkg0x53;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author 2018-1364
+ */
+public class Problem_1 {
+    // Constant Variables
+    final Scanner get = new Scanner(System.in);
+    final int arr[] = new int[10]; 
+ 
+    // Public Functions
+    // Get user values
+    public void getVal(){             
+        for(int i = 0; i < arr.length; i++){
+            System.out.print("#"+(i+1) +": ");
+            arr[i] = get.nextInt();
+        }
+    }
+    // Display computed value between max and min
+    public void disp_compute(){
+       System.out.println("The difference of the highest and lowest elements is "+ compute());
+    }
+    // Display the maximum's index
+    public void disp_index_max(){
+        System.out.println("The index with highest value is "+ i_max());
+    }
+    // Display the minimum's index
+    public void disp_index_min(){
+        System.out.println("The index with lowest value is "+ i_min());
+    }
+    // Display the maximum number
+    public void disp_max(){
+        System.out.println("The highest value is "+ max());
+    }
+    // Display the minimum number
+    public void disp_min(){
+        System.out.println("The lowest value is "+ min());
+    }
+    
+    // Private Functions
+    // Subtract the max and min number
+    private int compute(){
+         return max()-min();
+    }
+    // Find the maximum's index
+    private int i_max(){
+        int index = 0; // Assuming that index 0 is the Highest
+        for(int i = 0; i < arr.length ; i++){
+            if(max() == arr[i]){
+                index = i;
+            }
+        }
+        return index;
+    }   
+    // Find the minimum's index
+    private int i_min(){
+        int index = 0; // Assuming that the index 0 is the Highest
+        for(int i = 0; i < arr.length ; i++){
+            if(min() == arr[i]){
+                index = i;
+            }
+        }
+        return index;
+    }
+    // Find the max
+    private int max(){
+        int max = arr[0]; // Assuming that the value at index 0 is the Highest
+        for(int i = 0; i < arr.length ; i++){
+            if(max < arr[i]){
+                // The assume value is lower than the arr[i]'s value
+                max = arr[i]; // then arr[i]'s value will be the new assume highest value
+            }
+        }
+        return max;
+    }
+    // Find the min
+    private int min(){
+        int min = arr[0]; // Assuming that the value at index 0 is the lowest
+        for(int i = 0; i < arr.length ; i++){
+            if(min > arr[i]){
+                // The assume value is higher than the arr[i]'s value
+                min = arr[i]; // then arr[i]'s value will be the new assume lowest value
+            }
+        }
+        return min;
+    }
+}
