@@ -190,7 +190,7 @@ class Vigenere extends Cryptography {
 
         // start decrypting
 
-        // Eq. M[i] = (C[i] - K[i mod K.len]) mod 26
+        // Eq. M[i] = (C[i] - K[i mod K.len] + 26) mod 26
         for (int i = 0; i < decryptedDec.length; i++) {
             int C = decCipher[i]; // cipher message
             int K = decKey[(i % decKey.length)]; // repeated key
