@@ -3,8 +3,6 @@
  * 
  */
 
-package Exercise1; // folder name
-
 // imports
 import java.io.BufferedReader;
 import java.io.IOException;
