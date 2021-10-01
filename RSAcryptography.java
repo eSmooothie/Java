@@ -1,7 +1,3 @@
-/**
- * Cryptography 
- * 
- */
 
 // imports
 import java.io.BufferedReader;
