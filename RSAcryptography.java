@@ -20,7 +20,7 @@ import java.util.Random;
  * Main
  * 
  */
-class Main {
+class RSAcryptography {
     public static void main(String args[]) throws IOException {
         // select two primes p and q, p != q
         int p = 11;
